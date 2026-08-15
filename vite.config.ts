@@ -7,4 +7,9 @@ export default defineConfig({
   resolve: {
     tsconfigPaths: true,
   },
+  server: {
+    // Leading dot matches the domain and any subdomain, so a new tunnel URL
+    // does not require a config change.
+    allowedHosts: [".ngrok-free.app", ".ngrok.app", ".trycloudflare.com"],
+  },
 });
