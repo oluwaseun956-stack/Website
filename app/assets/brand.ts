@@ -1,0 +1,23 @@
+export { default as heroPortrait } from "./images/brand/hero-portrait.png";
+export { default as aboutPortrait } from "./images/brand/about-portrait.png";
+export { default as aboutHero } from "./images/brand/about-hero.png";
+export { default as launchpadHero } from "./images/brand/launchpad-hero.png";
+export { default as instructorPortrait } from "./images/brand/instructor-portrait.png";
+
+export { default as iconCheckCircle } from "./icons/brand/check-circle.svg";
+export { default as iconSmile } from "./icons/brand/smile.svg";
+export { default as iconTrendingUp } from "./icons/brand/trending-up.svg";
+export { default as iconBriefcase } from "./icons/brand/briefcase.svg";
+export { default as iconChartBar } from "./icons/brand/chart-bar.svg";
+export { default as iconGraduationCap } from "./icons/brand/graduation-cap.svg";
+export { default as iconFileText } from "./icons/brand/file-text.svg";
+export { default as iconRefreshCw } from "./icons/brand/refresh-cw.svg";
+export { default as iconCheckSquare } from "./icons/brand/check-square.svg";
+export { default as iconMonitor } from "./icons/brand/monitor.svg";
+export { default as iconCheck } from "./icons/brand/check.svg";
+export { default as iconCircleHelp } from "./icons/brand/circle-help.svg";
+export { default as iconAward } from "./icons/brand/award.svg";
+export { default as iconCreditCard } from "./icons/brand/credit-card.svg";
+export { default as iconBuilding } from "./icons/brand/building.svg";
+export { default as iconUpload } from "./icons/brand/upload.svg";
+export { default as iconChevronDown } from "./icons/brand/chevron-down.svg";

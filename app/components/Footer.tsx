@@ -1,72 +1,82 @@
 import { Link } from "react-router";
-import { iconLinkedin } from "../assets";
 
-type FooterProps = {
-  variant?: "default" | "minimal" | "legal";
-};
+const navLinks = [
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/analyst-launchpad", label: "Analyst Launchpad" },
+  { to: "/consultancy", label: "Consultancy" },
+  { to: "/contact", label: "Contact" },
+];
 
-export function Footer({ variant = "default" }: FooterProps) {
-  if (variant === "minimal") {
-    return (
-      <footer className="mx-auto w-full max-w-[1280px] border-t border-line/20 px-6 pb-12 pt-12">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-[10px] uppercase tracking-widest text-muted">
-            © 2024 The Executive Editorial. Precision in Synthesis.
-          </p>
-          <div className="flex gap-8 text-[10px] uppercase tracking-widest text-muted">
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            <span>Privacy Policy</span>
-            <Link to="/book">Contact</Link>
-          </div>
-        </div>
-      </footer>
-    );
-  }
+const socialLinks = [
+  { href: "https://linkedin.com", label: "LinkedIn" },
+  { href: "https://instagram.com", label: "Instagram" },
+  { href: "https://youtube.com", label: "YouTube" },
+];
 
+const legalLinks = [
+  { label: "Privacy Policy" },
+  { label: "Terms & Conditions" },
+  { label: "Refund Policy" },
+];
+
+export function Footer() {
   return (
-    <footer className="bg-footer px-8 py-16">
-      <div className="mx-auto grid max-w-[1280px] gap-12 md:grid-cols-3">
-        <div className="space-y-4">
-          <p className="font-serif text-xl text-teal-800">
-            The Executive Editorial
-          </p>
-          <p className="max-w-xs text-sm leading-relaxed text-slate-soft">
-            Synthesizing complex data into actionable strategies for
-            high-performance organizations and professionals.
-          </p>
-        </div>
+    <footer className="bg-navy px-6 pb-12 pt-[100px] text-white lg:px-20">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-20">
+        <div className="flex flex-col justify-between gap-12 lg:flex-row lg:items-start">
+          <div className="max-w-[400px] space-y-5">
+            <p className="font-serif text-[28px] font-black">SEUN EDEMA</p>
+            <p className="text-base leading-relaxed text-white/80">
+              Business Analyst | Educator | Consultant
+            </p>
+          </div>
 
-        <div className="space-y-4">
-          <p className="text-sm font-bold uppercase tracking-wide text-teal-800">
-            Navigation
-          </p>
-          <div className="flex flex-col gap-3 text-sm uppercase tracking-wide text-slate-soft">
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            <span>Privacy Policy</span>
-            <span>Terms of Service</span>
-            <Link to="/book" className="hover:text-teal-700">
-              Contact
-            </Link>
+          <div className="flex flex-wrap gap-12 lg:gap-20">
+            <div className="w-40 space-y-6">
+              <p className="text-sm font-bold uppercase">Navigation</p>
+              <div className="flex flex-col gap-3.5 text-[15px] text-white/80">
+                {navLinks.map((link) => (
+                  <Link key={link.to} to={link.to} className="hover:text-white">
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="w-40 space-y-6">
+              <p className="text-sm font-bold uppercase">Social</p>
+              <div className="flex flex-col gap-3.5 text-[15px] text-white/80">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-white"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="w-40 space-y-6">
+              <p className="text-sm font-bold uppercase">Legal</p>
+              <div className="flex flex-col gap-3.5 text-[15px] text-white/80">
+                {legalLinks.map((link) => (
+                  <span key={link.label}>{link.label}</span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-col items-start gap-6 md:items-end">
-          <p className="text-right text-sm uppercase tracking-wide text-slate-soft">
-            © 2024 The Executive Editorial. Precision in Synthesis.
+        <div className="space-y-8">
+          <div className="h-px w-full bg-white/10" />
+          <p className="text-center text-sm text-white/60">
+            © 2026 Seun Edema. All rights reserved.
           </p>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex size-6 overflow-hidden"
-            aria-label="LinkedIn"
-          >
-            <img src={iconLinkedin} alt="" className="size-full" />
-          </a>
         </div>
       </div>
     </footer>
